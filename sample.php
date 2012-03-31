@@ -17,3 +17,4 @@ if($nma->verify()){
         echo "Notifcation sent!";
     }
 }
+

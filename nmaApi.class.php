@@ -76,6 +76,7 @@ class nmaApi
 
     /**
      * @param bool $key [optional] if not set the one used on construct is used
+     *
      * @return bool|mixed|SimpleXMLElement|string
      */
     public function verify($key = false)
@@ -83,9 +84,9 @@ class nmaApi
 
         $options = array();
 
-        if($key !== false){
+        if ($key !== false) {
             $options['apikey'] = $key;
-        }else{
+        } else {
             $options['apikey'] = $this->apiKey;
         }
 
@@ -101,33 +102,34 @@ class nmaApi
      * @param string $application
      * @param string $event
      * @param string $description
-     * @param int $priority
-     * @param bool $apiKeys
+     * @param int    $priority
+     * @param bool   $apiKeys
+     *
      * @return bool|mixed|SimpleXMLElement|string
      */
     public function notify($application = '', $event = '', $description = '', $priority = 0, $apiKeys = false)
     {
-        if(empty($application) || empty($event) || empty($description)){
+        if (empty($application) || empty($event) || empty($description)) {
             return $this->error('you must supply a application name, event and long desc');
         }
 
-        $post = array('application' => substr($application,0,256),
-        'event' => substr($event,0,1000) ,
-        'description' => substr($description,0,10000),
-            'priority' => $priority
+        $post = array('application' => substr($application, 0, 256),
+                      'event'       => substr($event, 0, 1000),
+                      'description' => substr($description, 0, 10000),
+                      'priority'    => $priority
         );
 
-        if($this->devKey){
+        if ($this->devKey) {
             $post['developerkey'] = $this->devKey;
         }
 
-        if($apiKeys !== false){
+        if ($apiKeys !== false) {
             $post['apikey'] = $apiKeys;
-        }else{
+        } else {
             $post['apikey'] = $this->apiKey;
         }
 
-        return $this->makeApiCall(self::LIB_NMA_NOTIFY,$post,'POST');
+        return $this->makeApiCall(self::LIB_NMA_NOTIFY, $post, 'POST');
     }
 
 
@@ -221,6 +223,7 @@ class nmaApi
 
     /**
      * @param SimpleXMLElement $obj
+     *
      * @return bool
      */
     private function process_xml_return(SimpleXMLElement $obj)
