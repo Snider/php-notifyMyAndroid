@@ -104,20 +104,30 @@ class nmaApi
      * @param string $description
      * @param int    $priority
      * @param bool   $apiKeys
+     * @param array  $options
      *
      * @return bool|mixed|SimpleXMLElement|string
      */
-    public function notify($application = '', $event = '', $description = '', $priority = 0, $apiKeys = false)
+    public function notify($application = '', $event = '', $description = '', $priority = 0, $apiKeys = false, $options = array())
     {
         if (empty($application) || empty($event) || empty($description)) {
             return $this->error('you must supply a application name, event and long desc');
         }
 
-        $post = array('application' => substr($application, 0, 256),
-                      'event'       => substr($event, 0, 1000),
-                      'description' => substr($description, 0, 10000),
-                      'priority'    => $priority
-        );
+        // place here so other parameter settings can override this
+        $post = array();
+        
+        // notify options present? This can be: url or content-type for now.
+        if(count($options) > 0) {
+            foreach($options as $k=>$v) {
+                $post[$k] = $v;
+            }
+        }
+
+       $post['application']    = substr($application, 0, 256);
+       $post['event']          = substr($event, 0, 1000);
+       $post['description']    = substr($description, 0, 10000);
+       $post['priority']       = $priority;
 
         if ($this->devKey) {
             $post['developerkey'] = $this->devKey;
