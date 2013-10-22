@@ -161,7 +161,7 @@ class nmaApi
             )
         );
         if ($params !== null && !empty($params)) {
-            $params = http_build_query($params);
+            $params = http_build_query($params, '', '&');
             if ($verb == 'POST') {
                 $cparams["http"]['header'] = 'Content-Type: application/x-www-form-urlencoded';
                 $cparams['http']['content'] = $params;
