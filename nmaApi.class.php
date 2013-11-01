@@ -81,7 +81,6 @@ class nmaApi
      */
     public function verify($key = false)
     {
-
         $options = array();
 
         if ($key !== false) {
@@ -90,12 +89,26 @@ class nmaApi
             $options['apikey'] = $this->apiKey;
         }
 
-
         if ($this->devKey) {
             $options['developerkey'] = $this->devKey;
         }
 
-        return $this->makeApiCall(self::LIB_NMA_VERIFY, $options);
+        // check multiple api-keys
+        if(strpos($options['apikey'], ","))
+        {
+            $keys = explode(',', $options['apikey']);
+            foreach($keys as $api)
+            {
+                $options['apikey'] = $api;
+                if(!$this->makeApiCall(self::LIB_NMA_VERIFY, $options))
+                    return $this->makeApiCall(self::LIB_NMA_VERIFY, $options);
+            }
+            return true;
+        }
+        else
+        {
+            return $this->makeApiCall(self::LIB_NMA_VERIFY, $options);
+        }
     }
 
     /**
