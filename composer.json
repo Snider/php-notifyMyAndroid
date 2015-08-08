@@ -20,7 +20,13 @@
             "name": "Paul Lashbrook",
             "email": "lashbrook.paul@gmail.com",
             "role": "developer"
+        },
+        {
+            "name" : "Dennis Koot",
+            "url" : "http://www.tantalos.nl/",
+            "role" : "developer"
         }
+
     ],
     "repositories": [
         {
