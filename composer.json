@@ -1,5 +1,5 @@
 {
-    "name": "snider/php-notifyMyAndroid",
+    "name": "snider/php-notify-my-android",
     "description": "a PHP5 lib to use www.notifymyandroid.com ",
     "version": "1.0.0",
     "type": "library",
