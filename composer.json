@@ -22,9 +22,14 @@
             "role": "developer"
         },
         {
-            "name" : "Dennis Koot",
-            "url" : "http://www.tantalos.nl/",
-            "role" : "contributor"
+            "name": "Dennis Koot",
+            "url": "http://www.tantalos.nl/",
+            "role": "contributor"
+        },
+        {
+            "name": "Chris Schaleborgh",
+            "url": "https://github.com/cschalenborgh",
+            "role": "contributor"
         }
 
     ],
