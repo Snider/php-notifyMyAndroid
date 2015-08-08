@@ -1,0 +1,33 @@
+{
+    "name": "snider/php-notifyMyAndroid",
+    "description": "a PHP5 lib to use www.notifymyandroid.com ",
+    "version": "1.0.0",
+    "type": "library",
+    "keywords": [
+        "android",
+        "push notification",
+        "api"
+    ],
+    "minimum-stability": "stable",
+    "license": "GPL-3.0",
+    "autoload": {
+        "psr-0": {
+            "": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Paul Lashbrook",
+            "email": "lashbrook.paul@gmail.com",
+            "role": "developer"
+        }
+    ],
+    "repositories": [
+        {
+
+            "type": "vcs",
+            "url": "https://github.com/snider/php-notifyMyAndroid"
+
+        }
+    ]
+}
