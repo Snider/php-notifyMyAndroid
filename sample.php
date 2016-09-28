@@ -1,20 +1,16 @@
 <?php
-/**
- *
- * User: paul
- * Date: 31/03/12
- * Time: 04:55
- * To change this template use File | Settings | File Templates.
- */
-require dirname(__FILE__).'/nmaApi.class.php';
+namespace snider\NotifyMyAndroid;
 
-$nma = new nmaApi(array('apikey' => 'ae87ee05b547fc07cc129eeef0406b061a32ecdf189197e6'));
+require_once realpath(__DIR__ . '/vendor') . '/autoload.php';
 
+$apiKey      = 'insertYourApiKeyHere';
+$application = 'snider/php-notify-my-android';
+$event       = 'Sample Event';
+$description = 'This is a sample event notification.';
 
-
-if($nma->verify()){
-    if($nma->notify('My Test', 'New Gizmo', 'Kinda cool, php to my droid... nice')){
-        echo "Notifcation sent!";
+$nma = new Api(array('apikey' => $apiKey));
+if ($nma->verify()) {
+    if ($nma->notify($application, $event, $description)) {
+        echo 'Notification sent';
     }
 }
-

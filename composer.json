@@ -1,7 +1,6 @@
 {
     "name": "snider/php-notify-my-android",
-    "description": "a PHP5 lib to use www.notifymyandroid.com ",
-    "version": "1.0.0",
+    "description": "PHP library for NotifyMyAndroid.com which does not require cURL",
     "type": "library",
     "keywords": [
         "android",
@@ -11,8 +10,8 @@
     "minimum-stability": "stable",
     "license": "GPL-3.0",
     "autoload": {
-        "psr-0": {
-            "": "src/"
+        "psr-4": {
+            "snider\\NotifyMyAndroid\\": "src/"
         }
     },
     "authors": [
@@ -23,22 +22,19 @@
         },
         {
             "name": "Dennis Koot",
-            "url": "http://www.tantalos.nl/",
+            "homepage": "http://www.tantalos.nl/",
             "role": "contributor"
         },
         {
             "name": "Chris Schaleborgh",
-            "url": "https://github.com/cschalenborgh",
+            "homepage": "https://github.com/cschalenborgh",
             "role": "contributor"
         }
-
     ],
     "repositories": [
         {
-
             "type": "vcs",
             "url": "https://github.com/snider/php-notifyMyAndroid"
-
         }
     ]
 }
