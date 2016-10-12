@@ -22,6 +22,11 @@
             "role": "developer"
         },
         {
+            "name": "Ch'Ih-Yu",
+            "email": "chi-yu@web.de",
+            "role" : "developer"
+        },
+        {
             "name": "Dennis Koot",
             "homepage": "http://www.tantalos.nl/",
             "role": "contributor"
