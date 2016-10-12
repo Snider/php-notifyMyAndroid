@@ -2,7 +2,6 @@
     "name": "snider/php-notify-my-android",
     "description": "PHP library for NotifyMyAndroid.com which does not require cURL",
     "type": "library",
-    "version" : "2.0.0",
     "keywords": [
         "android",
         "push notification",
