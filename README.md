@@ -1,6 +1,46 @@
-this is a php library for NotifyMyAndroid.com that doesn't need curl, 
-if you find a bug, or think of a improvment please fork and submit a pull request...
+snider/php-notify-my-android
+============================
 
-~~im still using my G1, and can't actually use this library myself... allthough it is in use by others.. my point is... help welcome :)~~
+This is a PHP library for [NotifyMyAndroid.com][0] that does not require curl.
 
-I have had a nexus 5 since it came out and now actually using the lib, if i find any improvments i can test them myself :) yay!
+If you find a bug, or think of an improvement, please fork the repository and
+submit a pull request.
+
+I have had a nexus 5 since it came out and am now actually using the lib. If I
+find any improvements, I can test them myself. :) Yay!
+
+
+Usage
+-----
+
+A basic approach at using this package could look like this:
+
+```php
+<?php
+namespace snider\NotifyMyAndroid;
+
+require_once realpath(__DIR__ . '/vendor') . '/autoload.php';
+
+$apiKey      = 'insertYourApiKeyHere';
+$application = 'snider/php-notify-my-android';
+$event       = 'Sample Event';
+$description = 'This is a sample event notification.';
+
+$nma = new Api(array('apikey' => $apiKey));
+if ($nma->verify()) {
+    if ($nma->notify($application, $event, $description)) {
+        echo 'Notification sent';
+    }
+}
+```
+
+Use the included `sample.php` to try it for yourself.
+
+
+License
+-------
+
+See LICENSE.txt for full license details.
+
+
+[0]: http://notifymyandroid.com
