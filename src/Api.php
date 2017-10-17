@@ -312,7 +312,6 @@ class Api
         } else {
             return $this->error(
                 'This API requires all calls to have params'
-                . $this->debug ? ', you provided: ' . var_dump($params) : ''
             );
         }
 
@@ -323,9 +322,6 @@ class Api
         } else {
             if ($this->debug) {
                 $meta = stream_get_meta_data($fp);
-                $this->error(
-                    'Var dump of HTTP headers' . var_dump($meta['wrapper_data'])
-                );
             }
 
             $res = stream_get_contents($fp);
