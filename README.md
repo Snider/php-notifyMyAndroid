@@ -1,3 +1,5 @@
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/42faf919-fadf-43d6-8366-5d348f3c5b2d/big.png)](https://insight.sensiolabs.com/projects/42faf919-fadf-43d6-8366-5d348f3c5b2d)
+
 snider/php-notify-my-android
 ============================
 
