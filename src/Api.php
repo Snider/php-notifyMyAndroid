@@ -320,10 +320,6 @@ class Api
         if (!$fp) {
             $res = false;
         } else {
-            if ($this->debug) {
-                $meta = stream_get_meta_data($fp);
-            }
-
             $res = stream_get_contents($fp);
         }
 
